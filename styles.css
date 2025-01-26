@@ -1,0 +1,138 @@
+.slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    transition: color 0.9s ease;
+  }
+  
+
+  @keyframes bounceInPlace {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-10px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-bounce-in-place {
+    animation: bounceInPlace 1s ease-out forwards;
+  }
+
+  /* 3D Hover Effect */
+  .hover-3d:hover {
+    transform: rotateX(5deg) rotateY(-5deg) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .hover-3d {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+
+      /* Slow hover movement */
+      .hover-move {
+        transition: transform 0.6s ease;
+      }
+      .hover-move:hover {
+        transform: translateY(-10px) scale(1.02);
+      }
+  
+      /* Fly-in animation */
+      @keyframes flyInLeft {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+  
+      @keyframes bounceInRight {
+        0% {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        60% {
+          transform: translateX(-10%);
+        }
+        80% {
+          transform: translateX(5%);
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+  
+      .fly-in-left {
+        animation: flyInLeft 1s ease-out forwards;
+      }
+  
+      .bounce-in-right {
+        animation: bounceInRight 1s ease-out forwards;
+      }
+
+
+         /* Hover animations */
+    .hover-3d:hover {
+      transform: scale(1.05) rotateY(5deg) rotateX(5deg);
+      transition: transform 0.5s ease-in-out;
+    }
+
+    /* Slide-in animation */
+    @keyframes productSlideIn {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Text movement */
+    .text-slow-move {
+      animation: slowMove 10s linear infinite;
+    }
+
+    @keyframes slowMove {
+      0% {
+        transform: translateX(0%);
+      }
+
+      50% {
+        transform: translateX(5%);
+      }
+
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+    /* Stop animation on hover */
+    .text-slow-move:hover {
+      animation-play-state: paused;
+    }
+
+    /* Dots */
+    .product-dot-active {
+      background-color: #facc15; /* Active dot color */
+    }
+
+    .product-dot:hover {
+      transform: scale(1.2);
+      background-color: #facc15;
+      transition: transform 0.2s, background-color 0.2s;
+    }

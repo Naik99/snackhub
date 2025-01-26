@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SnacksHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Dynamically set Tailwind colors */
+    .dynamic-bg {
+      transition: background-color 0.3s ease-in-out;
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#54162b]">
+  <!-- Navbar -->
+  <header id="navbar" class="fixed w-full top-0 flex justify-between items-center px-8 py-4 z-10 dynamic-bg transition-colors duration-300">
+    <h1 id="site-name" class="font-bold text-xl">SnacksHub</h1>
+    <nav id="nav-links" class="flex gap-6">
+      <a href="#" class="hover:underline"><span>Home</span></a>
+      <a href="#" class="hover:underline"><span>About</span></a>
+      <a href="#" class="hover:underline"><span>Snacks</span></a>
+      <a href="#" class="hover:underline"><span>Contact</span></a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <!-- Slider -->
+    <div class="w-full h-full overflow-hidden relative">
+      <div id="slides" class="flex w-full h-full transition-transform duration-500">
+        <!-- Slides -->
+        <div class="slide flex items- justify-center flex-col text-center mt-15 w-full h-full dynamic-bg bg-no-repeat bg-cover bg-center" data-color="#FDA481"
+        style="background-image: url(assets/slider010.png)">
+          <h2 class="text-6xl font-bold text-left ml-24">Nutty Mix</h2>
+          <p class="text-left ml-24 mt-4 text-2xl">Healthy, tasty, anytime snack!</p>
+        </div>
+        <div class="slide flex justify-center bg-no-repeat bg-cover bg-center flex-col text-center w-full h-full dynamic-bg" data-color="#B4182D"
+        style="background-image: url(assets/slider\ \(2\).png)">
+        <h2 class="text-6xl font-bold text-left ml-24">Chocolate Cookies</h2>
+        <p class="text-left ml-24 mt-4 text-2xl">Sweet, gooey, and irresistible!</p>
+        </div>
+        <div class="slide flex justify-center flex-col bg-no-repeat bg-cover bg-center text-center w-full h-full dynamic-bg" data-color="#54162B"
+        style="background-image: url(assets/slider030.png)">
+        <h2 class="text-6xl font-bold text-right mr-24">Crispy Chips</h2>
+        <p class="text-right mr-24 mt-4 text-2xl">Perfectly crispy, every bite!</p>
+        </div>
+        <div class="slide flex justify-center bg-no-repeat bg-cover bg-center flex-col text-center w-full h-full dynamic-bg" data-color="#37415C"
+        style="background-image: url(assets/slider\ \(1\).png)">
+          <h2 class="text-6xl font-bold text-left ml-24">Salty Popcorn</h2>
+          <p class="text-left ml-24 mt-4 text-2xl">Light, crunchy, movie-perfect snack!</p>
+        </div>
+      </div>
+      <!-- Navigation Arrows -->
+      <button id="prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-4xl font-bold px-4 py-2 text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded">
+        &lt;
+      </button>
+      <button id="next" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-4xl font-bold px-4 py-2 text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded">
+        &gt;
+      </button>
+    </div> 
+
+    <!-- Dots -->
+    <div class="absolute bottom-8 flex gap-4">
+      <button class="dot w-4 h-4 rounded-full"></button>
+      <button class="dot w-4 h-4 rounded-full"></button>
+      <button class="dot w-4 h-4 rounded-full"></button>
+      <button class="dot w-4 h-4 rounded-full"></button>
+    </div>
+  </section>
+  <!-- Product Section -->
+  <section class="border-2 border-line border-[#54162B] w-full bg-orange-100 py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-[#54162B] mb-12">Recommended for You</h2>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Product 1 -->
+        <div
+          class="bg-white p-6 rounded-lg shadow hover-3d transition-transform duration-300 ease-in-out opacity-0 product-card"
+          data-delay="0"
+        >
+          <img
+            src="assets/TYP.png"
+            alt="Tangy Yogurt Parfait"
+            class="w-full h-64 hover:scale-110 object-cover rounded-md"
+          />
+          
+          <h3 class="mt-4 text-xl font-bold text-[#54162B]">Tangy Yogurt Parfait</h3>
+          <p class="text-[#54162B] mt-2">Layered, creamy, fruity delight.</p>
+          <button
+            class="mt-4 bg-[#54162b] text-white px-4 py-2 rounded hover:bg-[#B4182D] transition-all duration-300"
+          >
+            Buy Now
+          </button>
+        </div>
+
+        <!-- Repeat for Other Products -->
+        <div
+          class="bg-white p-6 rounded-lg shadow hover-3d transition-transform duration-300 ease-in-out opacity-0 product-card"
+          data-delay="200"
+        >
+          <img
+            src="assets/SCR.png"
+            alt="Sweet Cinnamon Rolls"
+            class="w-full h-64 hover:scale-110 mr-8 object-cover rounded-md"
+          />
+          <h3 class="mt-4 text-xl font-bold text-[#54162B]">Sweet Cinnamon Rolls</h3>
+          <p class="text-[#54162B] mt-2">Flaky-sugar, comforting bites.</p>
+          <button
+            class="mt-4 bg-[#54162b] text-white px-4 py-2 rounded hover:bg-[#B4182D] transition-all duration-300"
+          >
+            Buy Now
+          </button>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-lg shadow hover-3d transition-transform duration-300 ease-in-out opacity-0 product-card"
+          data-delay="400"
+        >
+          <img
+            src="assets/CVC.png"
+            alt="Crispy Veggie Chips"
+            class="w-full h-64 hover:scale-110 object-cover rounded-md"
+          />
+          <h3 class="mt-4 text-xl font-bold text-[#54162B]">Crispy Veggie Chips</h3>
+          <p class="text-[#54162B] mt-2">Light, crunchy, healthy snack.</p>
+          <button
+            class="mt-4 bg-[#54162b] text-white px-4 py-2 rounded hover:bg-[#B4182D] transition-all duration-300"
+          >
+            Buy Now
+          </button>
+        </div>
+
+        <!-- <div
+          class="bg-white p-6 rounded-lg shadow hover-3d transition-transform duration-300 ease-in-out opacity-0 product-card"
+          data-delay="600"
+        >
+          <img
+            src="assets/CDP.png"
+            alt="Chocolate-Dipped Pretzels"
+            class="w-full h-64 hover:scale-110 object-cover rounded-md"
+          />
+          <h3 class="mt-4 text-xl font-bold text-[#54162B]">Chocolate-Dipped Pretzels</h3>
+          <p class="text-[#54162B] mt-2">Salty-sweet, irresistible combination.</p>
+          <button
+            class="mt-4 bg-[#54162b] text-white px-4 py-2 rounded hover:bg-[#B4182D] transition-all duration-300"
+          >
+            Buy Now
+          </button>
+        </div> -->
+
+        <div
+          class="bg-white p-6 rounded-lg shadow hover-3d transition-transform duration-300 ease-in-out opacity-0 product-card"
+          data-delay="800"
+        >
+          <img
+            src="assets/FPM.png"
+            alt="Flavorful Popcorn Mix"
+            class="w-full h-64 hover:scale-110 object-cover rounded-md"
+          />
+          <h3 class="mt-4 text-xl font-bold text-[#54162B]">Flavorful Popcorn Mix</h3>
+          <p class="text-[#54162B] mt-2">Savory, crispy, snackable blend.</p>
+          <button
+            class="mt-4 bg-[#54162b] text-white px-4 py-2 rounded hover:bg-[#B4182D] transition-all duration-300"
+          >
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Snacks Section -->
+   <main class="py-16 flex items-center bg-[#FDA481] justify-center">
+     <div class="max-w-7xl w-full flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-12 px-6">
+       <!-- Text Content -->
+       <div class="w-full lg:w-1/2 space-y-6 fly-in-left opacity-0">
+         <span class="bg-[#54162b] text-sm text-white px-3 py-1 rounded-full font-semibold transform group-hover:scale-110 transition hover:bg-[#B4182D]">Best Selling</span>
+         <h2 class="text-4xl text-[#54162B] font-bold leading-tight hover-move">
+           Indulge in Our Premium Wild Berry Snack!
+         </h2>
+         <p class="text-lg text-[#54162B] hover-move">
+           Satisfy your taste buds with the most popular choice among snack lovers. Handpicked, delicious, and packed with flavor, this is the treat you don't want to miss.
+         </p>
+         <button class="bg-[#54162b] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#B4182D] hover-move">
+           Order Now
+         </button>
+       </div>
+ 
+       <!-- Image Content -->
+       <div class="w-full lg:w-1/2 bounce-in-right opacity-0">
+         <div class="relative group">
+           <img
+             src="assets/br-snk.png"
+             alt="Wild Berry Snack"
+             class="border-2 border-line border-[#54162B] w-full max-w-sm mx-auto rounded-lg shadow-lg hover-move"
+           />
+         </div>
+       </div>
+     </div>
+   </main>
+ 
+  <section class="w-full bg-gray-100 py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-[#54162B] text-4xl font-bold text-center mb-12">Popular and Bestselling Products</h2>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Product 1 -->
+        <div
+          class="bg-white p-6 rounded-lg shadow hover-3d transition-transform duration-300 ease-in-out opacity-0 product-card"
+          data-delay="0"
+        >
+          <img
+            src="assets/cc.png"
+            alt="Cup Cake"
+            class="w-full h-64 hover:scale-110 object-cover rounded-md"
+          />
+          <h3 class="mt-4 text-xl font-bold text-[#54162B]">Cup Cake</h3>
+          <p class="text-[#54162B] mt-2">Sweet, fluffy dessert.</p>
+          <button
+            class="mt-4 bg-[#54162b] text-white px-4 py-2 rounded hover:bg-[#B4182D] transition-all duration-300"
+          >
+            Buy Now
+          </button>
+        </div>
+
+        <!-- Repeat for Other Products -->
+        <div
+          class="bg-white p-6 rounded-lg shadow hover-3d transition-transform duration-300 ease-in-out opacity-0 product-card"
+          data-delay="200"
+        >
+          <img
+            src="assets/dn.png"
+            alt="Doughnut"
+            class="w-full h-64 hover:scale-110 mr-8 object-cover rounded-md"
+          />
+          <h3 class="mt-4 text-xl font-bold text-[#54162B]">Doughnut</h3>
+          <p class="text-[#54162B] mt-2">Soft, sugary treat.</p>
+          <button
+            class="mt-4 bg-[#54162b] text-white px-4 py-2 rounded hover:bg-[#B4182D] transition-all duration-300"
+          >
+            Buy Now
+          </button>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-lg shadow hover-3d transition-transform duration-300 ease-in-out opacity-0 product-card"
+          data-delay="400"
+        >
+          <img
+            src="assets/sr.png"
+            alt="Spring Roll"
+            class="w-full h-64 hover:scale-110 object-cover rounded-md"
+          />
+          <h3 class="mt-4 text-xl font-bold text-[#54162B]">Spring Roll</h3>
+          <p class="text-[#54162B] mt-2">Crispy, stuffed wrap.</p>
+          <button
+            class="mt-4 bg-[#54162b] text-white px-4 py-2 rounded hover:bg-[#B4182D] transition-all duration-300"
+          >
+            Buy Now
+          </button>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-lg shadow hover-3d transition-transform duration-300 ease-in-out opacity-0 product-card"
+          data-delay="600"
+        >
+          <img
+            src="assets/or.png"
+            alt="Onion Ring"
+            class="w-full h-64 hover:scale-110 object-cover rounded-md"
+          />
+          <h3 class="mt-4 text-xl font-bold text-[#54162B]">Onion Ring</h3>
+          <p class="text-[#54162B] mt-2">Golden, crispy circle.</p>
+          <button
+            class="mt-4 bg-[#54162b] text-white px-4 py-2 rounded hover:bg-[#B4182D] transition-all duration-300"
+          >
+            Buy Now
+          </button>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-lg shadow hover-3d transition-transform duration-300 ease-in-out opacity-0 product-card"
+          data-delay="800"
+        >
+          <img
+            src="assets/sm.png"
+            alt="Samosa Pocket"
+            class="w-full h-64 hover:scale-110 object-cover rounded-md"
+          />
+          <h3 class="mt-4 text-xl font-bold text-[#54162B]">Samosa Pocket</h3>
+          <p class="text-[#54162B] mt-2">Spiced, flaky triangle.</p>
+          <button
+            class="mt-4 bg-[#54162b] text-white px-4 py-2 rounded hover:bg-[#B4182D] transition-all duration-300"
+          >
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-gray-100 py-10">
+    <div class="container mx-auto">
+      <!-- Section Title -->
+      <div class="text-center mb-8">
+        <h3 class="text-3xl font-bold text-[#54162b]">NEW SNACKS</h3>
+        <div class="flex justify-center mt-4">
+          <ul class="flex space-x-4">
+            <li>
+              <button class="tab-button active text-[#B4182D] font-semibold" data-tab="chips">Chips</button>
+            </li>
+            <li>
+              <button class="tab-button text-[#54162b] hover:text-[#B4182D]" data-tab="cookies">Cookies</button>
+            </li>
+            <li>
+              <button class="tab-button text-[#54162b] hover:text-[#B4182D]" data-tab="candies">Candies</button>
+            </li>
+            <li>
+              <button class="tab-button text-[#54162b] hover:text-[#B4182D]" data-tab="drinks">Drinks</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Chips Tab -->
+        <div id="chips" class="tab-pane active grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Product Card One-->
+           <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Crunchy.png" alt="Juice" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Chips</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Crunchy Potato Crisps</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.00 <span class="line-through text-gray-500">$3.50</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Spicy.png" alt="Potato Chips" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Chips</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Spicy Tortilla Chips</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Cheesy.png" alt="Potato Chips" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Chips</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Cheesy Nacho Bites</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>     
+          
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Kettle.png" alt="Potato Chips" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Chips</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Salted Kettle Chips</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div> 
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Sour.png" alt="Potato Chips" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Chips</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Sour Cream Chips</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Onion.png" alt="Potato Chips" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Chips</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Onion Flavored Rings</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>     
+          
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Seaweed.png" alt="Potato Chips" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Chips</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Seaweed Snack Crisps</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>        
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Potato.png" alt="Potato Chips" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Chips</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Crispy Potato Chips</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>      
+        </div>
+  
+        <!-- Cookies Tab -->
+        <div id="cookies" class="tab-pane hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Product Card Two-->
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Chocolate.png" alt="Juice" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Cookies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Double Chocolate Chunk</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.00 <span class="line-through text-gray-500">$3.50</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Oatmeal.png" alt="Potato Chips" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Cookies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Oatmeal Raisin Delight</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Peanut.png" alt="Potato Cookies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Cookies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Peanut Butter Bliss</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>     
+          
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Almond.png" alt="Potato Cookies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Cookies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Almond Butter Cookie</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div> 
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Coconut.png" alt="Chocolate Cookies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Cookies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Coconut Macaroon Treat</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$5.00</p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Ginger.png" alt="Potato Cookies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Cookies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Ginger Snap Crunch</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/ChocolateChip.png" alt="Potato Cookies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Cookies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Chocolate Chip Classic</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>     
+          
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/White Chocolate.png" alt="Potato Cookies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Cookies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">White Chocolate Delight</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>      
+        </div>
+  
+        <!-- Candies Tab -->
+        <div id="candies" class="tab-pane hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Product Card 3-->
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Gummy.png" alt="Juice" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Candies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Gummy Bear Treats</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.00 <span class="line-through text-gray-500">$3.50</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/Hard.png" alt="Potato Chips" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Candies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Hard Fruit Candies</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/candy (1).png" alt="Potato Candies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Candies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Sour Lemon Drops</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>     
+          
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/candy (2).png" alt="Potato Candies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Candies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Mint Chocolate Fudge</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div> 
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/candy (3).png" alt="Fruit Candies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Candies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Lollipop Swirl Sticks</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$2.00</p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/candy (4).png" alt="Potato Candies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Candies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Cotton Candy Floss</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/candy (5).png" alt="Potato Candies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Candies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Taffy Fruit Chews</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>     
+          
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/candy (6).png" alt="Potato Candies" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Candies</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Peppermint Bark Squares</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>      
+        </div>
+  
+        <!-- Drinks Tab -->
+        <div id="drinks" class="tab-pane hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Product Card -->
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/drink (1).png" alt="Juice" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Drinks</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Sparkling Lemon Water</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.00 <span class="line-through text-gray-500">$3.50</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/drink (2).png" alt="Potato Chips" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Drinks</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Sweet Iced Tea</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/drink (3).png" alt="Potato Drinks" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Drinks</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Creamy Vanilla Shake</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>     
+          
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/drink (4).png" alt="Potato Drinks" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Drinks</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Fresh Orange Juice</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div> 
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/drink (5).png" alt="Juice" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Drinks</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Fizzy Ginger Ale</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.00 <span class="line-through text-gray-500">$3.50</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/drink (6).png" alt="Potato Drinks" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Drinks</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Cold Brew Coffee</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/drink (7).png" alt="Potato Drinks" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Drinks</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Chilled Coconut Wate</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>     
+          
+          <div class="group bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform duration-300 relative">
+            <div class="relative">
+              <img src="assets/drink (8).png" alt="Potato Drinks" class="rounded-lg transform group-hover:scale-110 transition-transform duration-300">
+              <!-- Add to Cart -->
+              <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#B4182D] text-white px-4 py-2 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Add to Cart
+              </button>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-sm text-gray-500">Drinks</p>
+              <h4 class="font-bold text-lg text-[#54162b]">Berry Blast Smoothie</h4>
+              <p class="text-[#B4182D] font-semibold mt-2">$3.50 <span class="line-through text-gray-500">$4.00</span></p>
+            </div>
+          </div>      
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+     <!-- Slider Section -->
+    <div class="relative w-full overflow-hidden">
+      <div id="product-slider" class="flex transition-transform duration-1000 ease-in-out">
+  <!-- Slide 1 (Image Right, Text Left) -->
+  <div class="bg-[#302637] min-w-full flex items-center gap-5 p-8 hover-3d">
+    <div class="flex-1 text-left">
+      <h2 class="text-4xl font-bold text-slow-move animate-productSlideIn">Chips</h2>
+      <h3 class="text-2xl font-semibold text-gray-400 mt-2 text-slow-move animate-productSlideIn">Crispy Delights, Anytime!</h3>
+      <p class="text-lg text-gray-300 mt-4 text-slow-move animate-productSlideIn">
+        Crunch into our premium chips – perfectly seasoned, irresistibly crispy, and crafted for ultimate satisfaction.
+      </p>
+    </div>
+    <div class="flex-1">
+      <img src="assets/pd-slid (1).png" alt="Chips"
+        class="rounded-lg lg:w-65 shadow-lg hover:scale-110 hover:shadow-2xl transition-transform duration-500">
+    </div>
+  </div>
+
+  <!-- Slide 2 (Text Left, Image Right) -->
+  <div class="bg-[#D72DB7] min-w-full flex items-center gap-5 p-8 hover-3d">
+    <div class="flex-1">
+      <img src="assets/pd-slid (2).png" alt="Cookies"
+        class="rounded-lg lg:w-65 shadow-lg hover:scale-110 hover:shadow-2xl transition-transform duration-500">
+    </div>
+    <div class="flex-1 text-left">
+      <h2 class="text-4xl font-bold text-slow-move animate-productSlideIn">Cookies</h2>
+      <h3 class="text-2xl font-semibold text-gray-400 mt-2 text-slow-move animate-productSlideIn">The Sweetest Indulgence!</h3>
+      <p class="text-lg text-gray-300 mt-4 text-slow-move animate-productSlideIn">
+        Treat yourself to our decadent cookies – rich, buttery, and baked to perfection.
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 3 (Image Right, Text Left) -->
+  <div class="bg-[#9D199C] min-w-full flex items-center gap-5 p-8 hover-3d">
+    <div class="flex-1 text-left">
+      <h2 class="text-4xl font-bold text-slow-move animate-productSlideIn">Candies</h2>
+      <h3 class="text-2xl font-semibold text-gray-400 mt-2 text-slow-move animate-productSlideIn">Sweet Treats to Brighten Your Day!</h3>
+      <p class="text-lg text-gray-300 mt-4 text-slow-move animate-productSlideIn">
+        Enjoy a burst of sweetness with our irresistible candies – perfect for sharing or savoring solo.
+      </p>
+    </div>
+    <div class="flex-1">
+      <img src="assets/pd-slid (3).png" alt="Candies"
+        class="rounded-lg lg:w-65 shadow-lg hover:scale-110 hover:shadow-2xl transition-transform duration-500">
+    </div>
+  </div>
+
+  <!-- Slide 4 (Text Left, Image Right) -->
+  <div class="bg-[#7A5985] min-w-full flex items-center gap-5 p-8 hover-3d">
+    <div class="flex-1">
+      <img src="assets/pd-slid (4).png" alt="Drinks"
+        class="rounded-lg lg:w-65 shadow-lg hover:scale-110 hover:shadow-2xl transition-transform duration-500">
+    </div>
+    <div class="flex-1 text-left">
+      <h2 class="text-4xl font-bold text-slow-move animate-productSlideIn">Drinks</h2>
+      <h3 class="text-2xl font-semibold text-gray-400 mt-2 text-slow-move animate-productSlideIn">Refreshment, Anytime!</h3>
+      <p class="text-lg text-gray-300 mt-4 text-slow-move animate-productSlideIn">
+        Quench your thirst with our wide range of refreshing drinks – perfect for any occasion.
+      </p>
+    </div>
+  </div>
+</div>
+
+      <!-- Navigation Arrows -->
+      <button onclick="productPrevSlide()" class="absolute top-1/2 left-4 bg-gray-800 text-white text-2xl px-4 py-2 rounded-full opacity-50 hover:opacity-100 focus:outline-none">
+        &lt;
+      </button>
+      <button onclick="productNextSlide()" class="absolute top-1/2 right-4 bg-gray-800 text-white text-2xl px-4 py-2 rounded-full opacity-50 hover:opacity-100 focus:outline-none">
+        &gt;
+      </button>
+
+      <!-- Dots -->
+      <div id="product-dots" class="flex justify-center space-x-2 mt-4">
+        <span class="product-dot w-3 h-3 bg-gray-500 rounded-full cursor-pointer" onclick="productGoToSlide(0)"></span>
+        <span class="product-dot w-3 h-3 bg-gray-500 rounded-full cursor-pointer" onclick="productGoToSlide(1)"></span>
+        <span class="product-dot w-3 h-3 bg-gray-500 rounded-full cursor-pointer" onclick="productGoToSlide(2)"></span>
+        <span class="product-dot w-3 h-3 bg-gray-500 rounded-full cursor-pointer" onclick="productGoToSlide(3)"></span>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
